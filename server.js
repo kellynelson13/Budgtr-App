@@ -19,6 +19,13 @@ app.get("/budgtr/new", function(req, res){
     res.render("new.ejs")
 })
 
+//Create
+app.post("/budgtr", (req, res) => {
+    //console.log(req.body);
+    budget.push(req.body)
+    res.redirect("/budgtr")
+})
+
 //Show
 app.get("/budgtr/:id", (req, res) => {
     res.render("show.ejs", {
