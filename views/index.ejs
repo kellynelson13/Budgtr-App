@@ -17,10 +17,37 @@
     />
     <title>Budgtr Home</title>
   </head>
+<!-- 
+// Create bank account variable  *** squids and flounders!
+// create functionality to make it go up and down with each item
+  //bank account amount will start at amount with fixed/provided items
+  //it will add or subtract whichever new item amount is added to the list (onclick?)
+//if the value if less then 0, change the background to red
+// if the value is greater than 1000, change the background to blue/green -->
+<%
+  
+  const amountArr = [];
+  for (let i=0; i < budgetData.length; i++){
+    let amountStr = budgetData[i].amount
+    let amountNum = parseInt(amountStr);
+    amountArr.push(amountNum)
+  }
+  console.log(amountArr)
+  let sum = amountArr.reduce(function(acc, num){
+    return acc + num;
+  }, 0)
+  console.log(sum)
+  const bankAccount = sum;
+
+%>
+
+
+
   <body>
 
     <div class="container">
         <h1>Hello Adult Life</h1>
+        <p>Bank Account Balance: <%= bankAccount%></p>
         <table>
             <th>Name</th>
             <% for(let i=0; i < budgetData.length; i++) { %>
