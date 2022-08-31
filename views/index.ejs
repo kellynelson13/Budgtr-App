@@ -21,8 +21,31 @@
 
     <div class="container">
         <h1>Hello Adult Life</h1>
-
-
+        <table>
+            <th>Name</th>
+            <% for(let i=0; i < budgetData.length; i++) { %>
+                <th>
+                    <a href="/budgtr/<%=i%>"><%=budgetData[i].name%></a>
+                </th>
+            <% } %>
+            <tr>
+            <th>Date</th>
+            <% for(let i=0; i < budgetData.length; i++) { %>
+                <td>
+                    <%= budgetData[i].date %>
+                </td>
+            <% } %>
+            </tr>
+            <tr>
+            <th>Amount</th>
+            <% for(let i=0; i < budgetData.length; i++){ %>
+                <td>
+                     <%= budgetData[i].amount %>
+                </td>
+            <% } %>
+           </tr>
+        </table>
+        <button><a href="/budgtr/new">Create New Item</a></button>
     </div>
 
   </body>
