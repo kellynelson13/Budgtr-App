@@ -15,5 +15,16 @@
     />
     <title>Budgtr New</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+        <h1>Add a new item below</h1>
+        <form action="/budgtr" method="POST">
+            Date: <input type="date">
+            <input type="text" name="name" placeholder="name"><br>
+            <input type="text" name="amount" placeholder="amount">
+            <input type="text" name="from" placeholder="from"><br>
+            <input type="submit" value="Create Item">
+        </form>
+    </div>
+  </body>
 </html>
